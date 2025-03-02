@@ -1,178 +1,142 @@
-/* Reset basic elements */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* Skills Section */
+#skills {
+    padding: 60px 20px;
+    background-color: #ffffff;
 }
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  background: #f4f4f4;
-  color: #333;
-  scroll-behavior: smooth;
+#skills h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #008C45;
+    margin-bottom: 30px;
 }
 
-/* Header styling */
-header {
-  background: linear-gradient(135deg, #007acc, #00aaff);
-  color: #fff;
-  padding: 30px 20px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
 }
 
-header nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+.skill-item {
+    background-color: #e0f7e0;
+    color: #008C45;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-header nav ul li {
-  margin: 0 15px;
+.skill-item h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
 }
 
-header nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: transform 0.3s ease;
+.skill-item p {
+    font-size: 16px;
+    line-height: 1.5;
 }
 
-header nav ul li a:hover {
-  transform: scale(1.1);
+.skill-item:hover {
+    transform: translateY(-10px);
 }
 
-.profile-photo {
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  animation: rotateIn 2s ease;
-  margin-bottom: 15px;
+/* Education Section */
+#education {
+    padding: 60px 20px;
+    background-color: #f1f1f1;
 }
 
-@keyframes rotateIn {
-  from {
-    transform: rotate(-360deg);
-    opacity: 0;
-  }
-  to {
-    transform: rotate(0deg);
-    opacity: 1;
-  }
+#education h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #008C45;
+    margin-bottom: 30px;
 }
 
-header h1 {
-  margin-bottom: 10px;
-  font-size: 2.8em;
-  animation: fadeInDown 1.5s ease;
+#education ul {
+    list-style-type: none;
+    text-align: center;
 }
 
-@keyframes fadeInDown {
-  from {
-    transform: translateY(-50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+#education li {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 10px;
 }
 
-header p {
-  font-size: 1.3em;
-  margin-bottom: 20px;
-  animation: fadeInUp 1.5s ease;
+/* Work Experience Section */
+#work-experience {
+    padding: 60px 20px;
+    background-color: #ffffff;
 }
 
-@keyframes fadeInUp {
-  from {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+#work-experience h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #008C45;
+    margin-bottom: 30px;
 }
 
-header .btn {
-  display: inline-block;
-  margin-top: 15px;
-  background: #fff;
-  color: #007acc;
-  padding: 12px 25px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background 0.3s ease, transform 0.3s ease;
+.experience-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
 }
 
-header .btn:hover {
-  background: #e6e6e6;
-  transform: scale(1.05);
+.experience-item {
+    background-color: #f5f5f5;
+    color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-/* Section styling with fade-in animations */
-section {
-  padding: 50px 20px;
-  margin: 20px auto;
-  max-width: 1000px;
-  background: #fff;
-  border-radius: 5px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease, transform 1s ease;
+.experience-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
+.experience-item p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
 }
 
-section h2 {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #007acc;
-  font-size: 2em;
+.experience-item ul {
+    list-style-type: none;
+    font-size: 16px;
 }
 
-.resume-section {
-  margin-bottom: 25px;
+.experience-item:hover {
+    transform: translateY(-10px);
 }
 
-.resume-section h3 {
-  color: #007acc;
-  margin-bottom: 10px;
-  border-bottom: 2px solid #007acc;
-  display: inline-block;
-  padding-bottom: 5px;
+/* Certifications Section */
+#certifications {
+    padding: 60px 20px;
+    background-color: #f1f1f1;
 }
 
-.resume-section h4 {
-  margin: 15px 0 5px;
-  color: #333;
+#certifications h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #008C45;
+    margin-bottom: 30px;
 }
 
-.resume-section p {
-  margin: 5px 0 10px;
+#certifications ul {
+    list-style-type: none;
+    text-align: center;
 }
 
-.resume-section ul,
-section ul {
-  list-style: disc;
-  margin-left: 20px;
-}
-
-/* Footer styling */
-footer {
-  background: #333;
-  color: #fff;
-  text-align: center;
-  padding: 15px 0;
-  margin-top: 40px;
-  font-size: 0.9em;
+#certifications li {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 10px;
 }
