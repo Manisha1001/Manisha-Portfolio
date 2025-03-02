@@ -61,7 +61,7 @@ I specialize in **ensuring product compliance, accelerating market entry, and op
 - Overseeing **quality assurance and HACCP processes**  
 - Collaborating with manufacturers for **label compliance**  
 
-🔹 **Regulatory Affairs Specialist (Food & Dietary Supplements)** | *Freyr Regulatory Solutions* (2016 – 2023)  
+🔹 **Assistant Manager – CON Food and Dietary Supplements– Food & Dietary Supplements CoE, Consumer Division** | *Freyr Regulatory Solutions* (2016 – 2023)  
 - Developed **regulatory strategies** for food & dietary supplements  
 - Led **pre-market approval processes** for NHPs & functional foods  
 - Provided **strategic consulting** for global market entry  
