@@ -1,15 +1,64 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    padding-top: 70px; /* Space for fixed header */
+}
+
+/* Container Styles */
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+header {
+    background-color: #008C45;
+    color: white;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    text-align: center;
+}
+
+/* Section Styles */
+section {
+    padding: 80px 0; /* Add space to sections for header visibility */
+    margin-bottom: 60px;
+}
+
 /* Skills Section */
 #skills {
-    padding: 60px 20px;
-    background-color: #ffffff;
+    background-color: #e8f5e9;
 }
 
 #skills h2 {
     text-align: center;
     font-size: 36px;
-    font-weight: bold;
     color: #008C45;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+}
+
+#skills p {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 40px;
 }
 
 .skills-container {
@@ -19,41 +68,41 @@
 }
 
 .skill-item {
-    background-color: #e0f7e0;
-    color: #008C45;
+    background-color: #fff;
+    color: #333;
     border-radius: 10px;
     padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-item h3 {
     font-size: 24px;
+    color: #008C45;
     margin-bottom: 15px;
 }
 
 .skill-item p {
     font-size: 16px;
+    color: #666;
     line-height: 1.5;
 }
 
 .skill-item:hover {
     transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Education Section */
 #education {
-    padding: 60px 20px;
-    background-color: #f1f1f1;
+    background-color: #f5f5f5;
 }
 
 #education h2 {
     text-align: center;
     font-size: 36px;
-    font-weight: bold;
     color: #008C45;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 #education ul {
@@ -64,21 +113,19 @@
 #education li {
     font-size: 18px;
     color: #666;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 /* Work Experience Section */
 #work-experience {
-    padding: 60px 20px;
-    background-color: #ffffff;
+    background-color: #fff;
 }
 
 #work-experience h2 {
     text-align: center;
     font-size: 36px;
-    font-weight: bold;
     color: #008C45;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .experience-container {
@@ -88,46 +135,50 @@
 }
 
 .experience-item {
-    background-color: #f5f5f5;
-    color: #333;
+    background-color: #f9f9f9;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .experience-item h3 {
     font-size: 24px;
+    color: #008C45;
     margin-bottom: 10px;
 }
 
 .experience-item p {
     font-size: 16px;
     color: #666;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .experience-item ul {
     list-style-type: none;
     font-size: 16px;
+    color: #555;
+}
+
+.experience-item li {
+    margin-bottom: 10px;
 }
 
 .experience-item:hover {
     transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Certifications Section */
 #certifications {
-    padding: 60px 20px;
-    background-color: #f1f1f1;
+    background-color: #e8f5e9;
 }
 
 #certifications h2 {
     text-align: center;
     font-size: 36px;
-    font-weight: bold;
     color: #008C45;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 #certifications ul {
@@ -138,5 +189,50 @@
 #certifications li {
     font-size: 18px;
     color: #666;
+    margin-bottom: 15px;
+}
+
+/* Fade-in Animation */
+.fade-in {
+    animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Hover Effect on List Items */
+li:hover {
+    color: #ffb914;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #008C45;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
     margin-bottom: 10px;
+}
+
+footer .social-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: #ffb914;
 }
