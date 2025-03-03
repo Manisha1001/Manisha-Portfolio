@@ -7,11 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap">
     <style>
         /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Open Sans', sans-serif;
@@ -27,7 +23,7 @@
             margin: 0 auto;
         }
 
-        /* Header Styles */
+        /* Header */
         header {
             background-color: #008C45;
             color: white;
@@ -40,11 +36,9 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        header h1 {
-            font-size: 24px;
-        }
+        header h1 { font-size: 24px; }
 
-        /* Profile Section */
+        /* Profile */
         .profile {
             text-align: center;
             padding: 60px 0;
@@ -58,31 +52,10 @@
             margin-bottom: 10px;
         }
 
-        .profile h2 {
-            color: #008C45;
-            font-size: 28px;
-        }
-
-        .profile p {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .contact-info {
-            font-size: 16px;
-            margin-top: 10px;
-        }
-
         .contact-info a {
             color: #008C45;
             text-decoration: none;
             font-weight: bold;
-        }
-
-        /* Resume Download Button */
-        .resume-download {
-            text-align: center;
-            margin-top: 20px;
         }
 
         .resume-download a {
@@ -96,15 +69,10 @@
             transition: background 0.3s ease;
         }
 
-        .resume-download a:hover {
-            background-color: #005f32;
-        }
+        .resume-download a:hover { background-color: #005f32; }
 
-        /* Section Styles */
-        section {
-            padding: 80px 0;
-            margin-bottom: 60px;
-        }
+        /* Sections */
+        section { padding: 80px 0; }
 
         h2 {
             text-align: center;
@@ -113,11 +81,7 @@
             margin-bottom: 20px;
         }
 
-        /* Skills Section */
-        #skills {
-            background-color: #e8f5e9;
-        }
-
+        /* Skills */
         .skills-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -125,63 +89,40 @@
         }
 
         .skill-item {
-            background-color: #fff;
-            border-radius: 10px;
+            background: white;
             padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
         }
 
-        .skill-item h3 {
-            font-size: 24px;
-            color: #008C45;
-            margin-bottom: 10px;
-        }
+        .skill-item:hover { transform: translateY(-5px); }
 
-        .skill-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Certifications Section */
+        /* Certifications */
         .certifications-container {
-            text-align: center;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
         }
 
-        .certification-item {
-            width: 200px;
-            text-align: center;
-        }
-
         .certification-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 14px 16px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         /* Footer */
         footer {
-            background-color: #008C45;
+            background: #008C45;
             color: white;
             text-align: center;
             padding: 20px;
         }
 
-        footer a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            transition: color 0.3s ease;
-        }
+        footer a { color: white; text-decoration: none; font-size: 18px; transition: color 0.3s; }
 
-        footer a:hover {
-            color: #ffb914;
-        }
+        footer a:hover { color: #ffb914; }
 
     </style>
 </head>
@@ -194,12 +135,12 @@
 <!-- Profile Section -->
 <section class="profile">
     <div class="container">
-        <img src="Manisha_Swargam.jpeg" alt="Manisha Swargam">
+        <img src="profile.jpg" alt="Manisha Swargam">
         <h2>Manisha Swargam</h2>
-        <p>Food Regulatory Affairs Specialist | Health Canada & CFIA Compliance</p>
+        <p>Regulatory Compliance & Strategic Consulting Professional</p>
         <div class="contact-info">
-            📧 Email: <a href="mailto:manisha@example.com">manisha.jan10@gmail.com</a> <br>
-            📞 Phone: <a href="tel:+1234567890">+1 (437) 313-8689</a> <br>
+            📧 Email: <a href="mailto:manisha.jan10@gmail.com">manisha.jan10@gmail.com</a> <br>
+            📞 Phone: <a href="tel:+14373138689">+1 (437)-313-8689</a> <br>
             🔗 <a href="https://www.linkedin.com/in/manisha-swargam-ab206713a/" target="_blank">LinkedIn Profile</a>
         </div>
         <div class="resume-download">
@@ -214,24 +155,32 @@
         <h2>Skills & Expertise</h2>
         <div class="skills-container">
             <div class="skill-item">
-                <h3>Food Safety Regulations</h3>
-                <p>Expert in CFIA’s Safe Food for Canadians Regulations (SFCR), Food and Drug Act</p>
+                <h3>Regulatory Compliance</h3>
+                <p>100% approval rate for CFIA product compliance.</p>
             </div>
             <div class="skill-item">
-                <h3>Regulatory Compliance</h3>
-                <p>Specialist in Health Canada product approvals and compliance</p>
+                <h3>Labeling & Claims Review</h3>
+                <p>Validated 100+ SKUs for ingredient & allergen compliance.</p>
+            </div>
+            <div class="skill-item">
+                <h3>Pre-Market Approvals</h3>
+                <p>30% faster approvals for 50+ food and supplement products.</p>
+            </div>
+            <div class="skill-item">
+                <h3>HACCP & Quality Audits</h3>
+                <p>Reduced non-conformance issues by 35%.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Certifications Section -->
+<!-- Certifications -->
 <section id="certifications">
     <div class="container">
         <h2>Certifications</h2>
         <div class="certifications-container">
             <div class="certification-item">
-                <img src="HACCP.png" alt="HACCP Certification">
+                <img src="haccp_cert.jpg" alt="HACCP Certification">
                 <p>HACCP Certified</p>
             </div>
             <div class="certification-item">
@@ -239,6 +188,15 @@
                 <p>Nutrition Labelling Certificate</p>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- Publications -->
+<section id="publications">
+    <div class="container">
+        <h2>Publications & Research</h2>
+        <p>📖 Dissertation: Enhancement of Solubility and Bioavailability of Hydrochlorothiazide Using Solid Dispersion Technique.</p>
+        <p>📢 10+ Regulatory Webinars & Thought Leadership Articles.</p>
     </div>
 </section>
 
