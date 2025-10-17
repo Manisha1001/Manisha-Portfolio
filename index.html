@@ -1,209 +1,963 @@
+
+import React from "react";
 <!DOCTYPE html>
+import { motion } from "framer-motion";
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manisha Swargam - Food Regulatory Affairs Specialist</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap">
-    <style>
-        /* General Reset */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+// --- Helpers ---
+  <meta charset="UTF-8" />
+const fadeUp = {
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  hidden: { opacity: 0, y: 24 },
+  <title>Manisha Swargam | Portfolio</title>
+  show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+};
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-            padding-top: 70px;
-        }
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+const stagger = {
+  <style>
+  show: { transition: { staggerChildren: 0.08 } },
+    :root {
+};
+      color-scheme: dark;
 
-        .container {
-            width: 80%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+      --bg: #050505;
+const Section = ({ id, title, subtitle, children }: any) => (
+      --bg-secondary: #0f0f10;
+  <section id={id} className="relative py-20 sm:py-28">
+      --bg-tertiary: #141416;
+    <div className="absolute inset-0 pointer-events-none">
+      --accent: #f7d465;
+      <div className="mx-auto max-w-6xl h-full opacity-40 blur-3xl" style={{
+      --text: #f7f7f8;
+        background: "radial-gradient(600px 200px at 50% 0%, rgba(92,107,247,.20), transparent 60%)",
+      --text-muted: #9ea0a5;
+      }}/>
+      --border: rgba(255, 255, 255, 0.06);
+    </div>
+      --card-gradient: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0));
+    <div className="relative mx-auto max-w-6xl px-6">
+    }
+      <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
 
-        /* Header */
-        header {
-            background-color: #008C45;
-            color: white;
-            padding: 20px 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 10;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+        <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl font-semibold tracking-tight text-slate-900">
+    * {
+          {title}
+      box-sizing: border-box;
+        </motion.h2>
+    }
+        {subtitle && (
 
-        header h1 { font-size: 24px; }
+          <motion.p variants={fadeUp} className="mt-2 text-slate-600 max-w-2xl">{subtitle}</motion.p>
+    body {
+        )}
+      margin: 0;
+        <div className="mt-10">{children}</div>
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      </motion.div>
+      background: radial-gradient(circle at top right, rgba(255,255,255,0.12), transparent 40%),
+    </div>
+                  radial-gradient(circle at bottom left, rgba(91, 75, 255, 0.28), transparent 50%),
+  </section>
+                  var(--bg);
+);
+      color: var(--text);
 
-        /* Profile */
-        .profile {
-            text-align: center;
-            padding: 60px 0;
-        }
+      line-height: 1.6;
+const Badge = ({ children }: any) => (
+      min-height: 100vh;
+  <span className="inline-flex items-center rounded-full border border-indigo-200 bg-white/70 px-3 py-1 text-xs font-medium text-indigo-700 shadow-sm backdrop-blur">
+    }
+    {children}
 
-        .profile img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid #008C45;
-            margin-bottom: 10px;
-        }
+  </span>
+    a {
+);
+      color: inherit;
 
-        .contact-info a {
-            color: #008C45;
-            text-decoration: none;
-            font-weight: bold;
-        }
+      text-decoration: none;
+const Card = ({ children }: any) => (
+    }
+  <div className="group rounded-2xl border border-slate-200 bg-white/70 p-6 shadow-sm backdrop-blur transition-all hover:-translate-y-1 hover:shadow-xl">
 
-        .resume-download a {
-            background-color: #008C45;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            transition: background 0.3s ease;
-        }
+    {children}
+    img {
+  </div>
+      max-width: 100%;
+);
+      display: block;
 
-        .resume-download a:hover { background-color: #005f32; }
+    }
+const Divider = () => <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent"/>;
 
-        /* Sections */
-        section { padding: 80px 0; }
 
-        h2 {
-            text-align: center;
-            font-size: 36px;
-            color: #008C45;
-            margin-bottom: 20px;
-        }
+    header {
+export default function PremiumPortfolio() {
+      position: sticky;
+  return (
+      top: 0;
+    <div className="min-h-screen w-full scroll-smooth bg-[#F7F9FC] text-slate-800">
+      z-index: 100;
+      {/* Top gradient bar */}
+      backdrop-filter: blur(16px);
+      <div className="fixed inset-x-0 top-0 z-40 h-1.5 bg-gradient-to-r from-indigo-600 via-violet-500 to-indigo-600" />
+      background: rgba(5, 5, 5, 0.8);
 
-        /* Skills */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-        }
+      border-bottom: 1px solid var(--border);
+      {/* Navbar */}
+    }
+      <nav className="sticky top-0 z-30 backdrop-blur bg-white/70 border-b border-slate-200/70">
 
-        .skill-item {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
+        <div className="mx-auto max-w-6xl px-6">
+    .nav-container {
+          <div className="flex items-center justify-between h-16">
+      max-width: 1180px;
+            <a href="#home" className="font-extrabold tracking-tight text-slate-900 text-lg">
+      margin: 0 auto;
+              KARTHIK <span className="text-indigo-600">MARUPAKA</span>
+      padding: 18px 24px;
+            </a>
+      display: flex;
+            <div className="hidden md:flex items-center gap-6 text-sm">
+      align-items: center;
+              <a href="#about" className="hover:text-indigo-600">About</a>
+      justify-content: space-between;
+              <a href="#experience" className="hover:text-indigo-600">Experience</a>
+      gap: 24px;
+              <a href="#projects" className="hover:text-indigo-600">Projects</a>
+    }
+              <a href="#skills" className="hover:text-indigo-600">Skills</a>
 
-        .skill-item:hover { transform: translateY(-5px); }
+              <a href="#testimonials" className="hover:text-indigo-600">Praise</a>
+    .logo {
+              <a href="#contact" className="hover:text-indigo-600">Contact</a>
+      font-weight: 600;
+            </div>
+      letter-spacing: 0.08em;
+            <div className="flex items-center gap-3">
+      font-size: 0.95rem;
+              <a
+      text-transform: uppercase;
+                href="#contact"
+      color: var(--text-muted);
+                className="rounded-xl border border-indigo-200 bg-white px-4 py-2 text-sm font-medium text-indigo-700 shadow-sm hover:shadow transition"
+    }
+              >
 
-        /* Certifications */
-        .certifications-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
+                Contact
+    nav ul {
+              </a>
+      list-style: none;
+              <a
+      display: flex;
+                href="#resume"
+      gap: 28px;
+                className="rounded-xl bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow hover:bg-indigo-500 transition"
+      margin: 0;
+              >
+      padding: 0;
+                View Résumé
+      font-size: 0.85rem;
+              </a>
+      color: var(--text-muted);
+            </div>
+    }
+          </div>
 
-        .certification-item img {
-            width: 200px;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+        </div>
+    nav ul li {
+      </nav>
+      position: relative;
 
-        /* Footer */
-        footer {
-            background: #008C45;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+    }
+      {/* Hero */}
 
-        footer a { color: white; text-decoration: none; font-size: 18px; transition: color 0.3s; }
+      <header id="home" className="relative overflow-hidden">
+    nav ul li::after {
+        <div className="absolute -z-10 inset-0 bg-gradient-to-b from-[#1E2A78] to-[#5C6BF7]" />
+      content: '';
+        <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
+      position: absolute;
+          <div className="grid items-center gap-10 md:grid-cols-2">
+      left: 0;
+            <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:.6}}>
+      bottom: -8px;
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs text-indigo-100 ring-1 ring-white/20">
+      width: 100%;
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> Open to Senior Scrum Master / Agile PM Roles
+      height: 2px;
+              </div>
+      border-radius: 999px;
+              <h1 className="mt-5 text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
+      transform: scaleX(0);
+                Agile Project Manager & Scrum Master
+      background: var(--accent);
+              </h1>
+      transition: transform 0.3s ease;
+              <p className="mt-4 text-indigo-100/90 leading-relaxed max-w-xl">
+    }
+                DataOps advocate with 10+ years across AI/ML, Healthcare IT & SaaS. I coach high‑performing teams and ship reliable outcomes with Azure, Jira, Confluence & modern DevOps.
 
-        footer a:hover { color: #ffb914; }
+              </p>
+    nav ul li:hover::after,
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+    nav ul li:focus-within::after {
+                <a href="#projects" className="rounded-xl bg-white px-5 py-3 text-sm font-semibold text-indigo-700 shadow hover:shadow-lg">Explore Projects</a>
+      transform: scaleX(1);
+                <a href="#experience" className="rounded-xl bg-white/10 px-5 py-3 text-sm font-semibold text-white ring-1 ring-white/30 hover:bg-white/20">See Experience</a>
+    }
+              </div>
 
-    </style>
+              <div className="mt-6 flex flex-wrap gap-2">
+    .cta-group {
+                <Badge>PSM‑I</Badge>
+      display: flex;
+                <Badge>SAFe 6</Badge>
+      gap: 12px;
+                <Badge>PSPO‑I</Badge>
+      align-items: center;
+                <Badge>Azure</Badge>
+    }
+                <Badge>Jira & Confluence</Badge>
+
+              </div>
+    .pill-button {
+            </motion.div>
+      padding: 10px 18px;
+            <motion.div initial={{opacity:0, scale:.95}} animate={{opacity:1, scale:1}} transition={{duration:.7}} className="justify-self-center">
+      font-size: 0.8rem;
+              <div className="relative">
+      font-weight: 500;
+                <div className="absolute -inset-2 rounded-[2rem] bg-gradient-to-br from-white/30 to-transparent blur-xl" />
+      border-radius: 999px;
+                <img
+      display: inline-flex;
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop"
+      align-items: center;
+                  alt="Karthik portrait"
+      justify-content: center;
+                  className="relative z-10 aspect-square w-72 sm:w-80 rounded-[2rem] object-cover shadow-2xl ring-1 ring-white/40"
+      gap: 8px;
+                />
+      background: rgba(255,255,255,0.06);
+              </div>
+      border: 1px solid rgba(255,255,255,0.08);
+            </motion.div>
+      color: var(--text);
+          </div>
+    }
+        </div>
+
+      </header>
+    .pill-button.primary {
+
+      background: var(--accent);
+      {/* About */}
+      color: #0e0e0f;
+      <Section id="about" title="About" subtitle="Calm, outcome‑driven servant leader. I enable clarity, cadence, and continuous improvement.">
+      border-color: transparent;
+        <div className="grid md:grid-cols-3 gap-6">
+    }
+          <Card>
+
+            <h3 className="text-base font-semibold">What I Do</h3>
+    .section {
+            <p className="mt-2 text-sm text-slate-600">
+      max-width: 1180px;
+              Coach teams to ship value predictably. Facilitate Scrum events, streamline flow with Kanban, and instrument delivery using actionable metrics: velocity, CFD, cycle & lead time, throughput.
+      margin: 0 auto;
+            </p>
+      padding: 80px 24px;
+          </Card>
+    }
+          <Card>
+
+            <h3 className="text-base font-semibold">How I Work</h3>
+    .hero {
+            <p className="mt-2 text-sm text-slate-600">
+      display: grid;
+              Data‑informed, people‑first. Empathy in 1:1s, crisp stakeholder comms, lightweight governance, and risk‑based planning. I combine Agile for apps with pragmatic waterfall for infra/compliance.
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            </p>
+      gap: 40px;
+          </Card>
+      align-items: center;
+          <Card>
+      padding-top: 60px;
+            <h3 className="text-base font-semibold">Impact</h3>
+      padding-bottom: 90px;
+            <ul className="mt-2 space-y-2 text-sm text-slate-600 list-disc list-inside">
+    }
+              <li>↑ 15% team productivity, ↓ 20% delays via proactive risk mgmt</li>
+
+              <li>0 external audit findings on fraud‑detection modernization</li>
+    .hero-heading {
+              <li>Scaled reviews across 6 Scrum teams with clear outcomes</li>
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+            </ul>
+      font-weight: 600;
+          </Card>
+      line-height: 1.15;
+        </div>
+      margin: 18px 0;
+      </Section>
+    }
+
+
+      <Divider />
+    .subtitle {
+
+      font-size: 0.9rem;
+      {/* Experience */}
+      color: var(--text-muted);
+      <Section id="experience" title="Experience" subtitle="A concise timeline of roles with quantified outcomes.">
+    }
+        <div className="relative">
+
+          <div className="absolute left-4 sm:left-1/2 h-full w-px -translate-x-1/2 bg-slate-200"/>
+    .badge-row {
+          <div className="space-y-8">
+      display: flex;
+            {[
+      flex-wrap: wrap;
+              {
+      gap: 10px;
+                title: "Scrum Master — Vosyn",
+      margin-top: 28px;
+                time: "Mar 2025 – Present · Remote (Canada)",
+    }
+                bullets: [
+
+                  "Coached multi‑team cadence; improved WIP discipline and flow.",
+    .badge {
+                  "Brought visibility with Jira dashboards and Confluence agreements.",
+      padding: 6px 12px;
+                ],
+      border-radius: 999px;
+              },
+      font-size: 0.75rem;
+              {
+      background: rgba(255,255,255,0.08);
+                title: "Project Manager / Scrum Master — Ploutos IT Consulting",
+      border: 1px solid rgba(255,255,255,0.12);
+                time: "Aug 2024 – Present · Remote (Canada)",
+      color: var(--text);
+                bullets: [
+    }
+                  "Delivered product increments with hybrid governance; aligned stakeholders.",
+
+                ],
+    .hero-card {
+              },
+      background: radial-gradient(circle at top, rgba(247,212,101,0.16), transparent 55%), var(--bg-secondary);
+              {
+      border: 1px solid rgba(255,255,255,0.08);
+                title: "Quality Team Manager / Scrum Master — IKS Health",
+      border-radius: 28px;
+                time: "Feb 2021 – Dec 2022 · Hyderabad, India",
+      padding: 40px;
+                bullets: [
+      display: grid;
+                  "Improved throughput with Kanban, reduced blockers; robust DoD/DoR.",
+      gap: 18px;
+                ],
+      position: relative;
+              },
+      overflow: hidden;
+            ].map((role, idx) => (
+    }
+              <motion.div key={idx} variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} className="relative">
+
+                <div className="sm:grid sm:grid-cols-2 sm:gap-8">
+    .hero-card::before,
+                  <div className="sm:text-right sm:pr-10">
+    .hero-card::after {
+                    <div className="inline-flex items-center gap-3 rounded-xl bg-white/70 px-4 py-3 shadow-sm border border-slate-200">
+      content: '';
+                      <span className="h-3 w-3 rounded-full bg-indigo-600"/>
+      position: absolute;
+                      <div>
+      border-radius: 50%;
+                        <p className="font-medium">{role.title}</p>
+      background: rgba(247,212,101,0.08);
+                        <p className="text-xs text-slate-500">{role.time}</p>
+      filter: blur(0px);
+                      </div>
+    }
+                    </div>
+
+                  </div>
+    .hero-card::before {
+                  <div className="sm:pl-10 mt-4 sm:mt-0">
+      width: 180px;
+                    <ul className="space-y-2 text-sm text-slate-700 list-disc list-inside">
+      height: 180px;
+                      {role.bullets.map((b, i) => <li key={i}>{b}</li>)}
+      top: -60px;
+                    </ul>
+      right: -40px;
+                  </div>
+    }
+                </div>
+
+              </motion.div>
+    .hero-card::after {
+            ))}
+      width: 220px;
+          </div>
+      height: 220px;
+        </div>
+      bottom: -120px;
+      </Section>
+      left: 40px;
+
+    }
+      <Divider />
+
+
+    .hero-card img {
+      {/* Projects */}
+      border-radius: 20px;
+      <Section id="projects" title="Featured Projects" subtitle="Case‑study style cards with live links and stack badges.">
+      border: 1px solid rgba(255,255,255,0.08);
+        <div className="grid md:grid-cols-3 gap-6">
+      width: 100%;
+          {[{
+    }
+            name: "AI‑Powered Portfolio",
+
+            desc: "Self‑driven, AI‑enhanced portfolio with automation hooks.",
+    .hero-card .small-title {
+            badges: ["HTML", "CSS", "AI"],
+      font-size: 0.75rem;
+            link: "#",
+      letter-spacing: 0.2em;
+          },{
+      color: var(--text-muted);
+            name: "Agile Template (Notion)",
+      text-transform: uppercase;
+            desc: "Published template enabling Agile Kanban workflows.",
+    }
+            badges: ["Notion", "Kanban"],
+
+            link: "#",
+    .hero-card h3 {
+          },{
+      margin: 0;
+            name: "Gmail API Assistant",
+      font-size: 1.4rem;
+            desc: "OAuth Python tool fetching latest emails; tracked with Jira/Confluence.",
+      font-weight: 500;
+            badges: ["Python", "OAuth", "Jira"],
+    }
+            link: "#",
+
+          }].map((p, i) => (
+    .section-heading {
+            <a key={i} href={p.link} className="block">
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+              <Card>
+      font-weight: 600;
+                <div className="aspect-video w-full rounded-xl bg-gradient-to-br from-indigo-50 to-white border border-slate-100 mb-4" />
+      margin-bottom: 18px;
+                <h3 className="text-base font-semibold">{p.name}</h3>
+    }
+                <p className="mt-2 text-sm text-slate-600">{p.desc}</p>
+
+                <div className="mt-3 flex flex-wrap gap-2">
+    .section-lead {
+                  {p.badges.map((b, j) => <Badge key={j}>{b}</Badge>)}
+      color: var(--text-muted);
+                </div>
+      max-width: 600px;
+                <div className="mt-4 text-sm font-medium text-indigo-700">View →</div>
+      margin-bottom: 38px;
+              </Card>
+      font-size: 0.95rem;
+            </a>
+    }
+          ))}
+
+        </div>
+    .about-grid {
+      </Section>
+      display: grid;
+
+      gap: 26px;
+      <Divider />
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+    }
+      {/* Skills */}
+
+      <Section id="skills" title="Skills & Tools" subtitle="A quick visual heatmap of my core strengths.">
+    .card {
+        <div className="grid md:grid-cols-2 gap-8">
+      background: var(--bg-secondary);
+          <Card>
+      padding: 26px;
+            <h3 className="text-sm font-semibold">Delivery & Coaching</h3>
+      border-radius: 18px;
+            <div className="mt-4 space-y-4">
+      border: 1px solid var(--border);
+              {[
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+                ["Scrum / Kanban Coaching", 95],
+    }
+                ["Facilitation & Stakeholder Comms", 92],
+
+                ["Metrics (Velocity, CFD, Cycle/Lead Time)", 90],
+    .card.highlight {
+                ["Risk‑based Planning", 88],
+      border-color: rgba(247,212,101,0.3);
+              ].map(([label, pct]: any, i: number) => (
+      background: linear-gradient(140deg, rgba(247,212,101,0.1), rgba(255,255,255,0));
+                <div key={i}>
+    }
+                  <div className="flex justify-between text-xs text-slate-600">
+
+                    <span>{label}</span><span>{pct}%</span>
+    .card-title {
+                  </div>
+      font-size: 1rem;
+                  <div className="mt-1 h-2 w-full rounded-full bg-slate-200">
+      font-weight: 500;
+                    <div className="h-2 rounded-full bg-gradient-to-r from-indigo-600 to-violet-500" style={{ width: `${pct}%` }} />
+      margin-bottom: 12px;
+                  </div>
+    }
+                </div>
+
+              ))}
+    .card p {
+            </div>
+      margin: 0;
+          </Card>
+      font-size: 0.9rem;
+          <Card>
+      color: var(--text-muted);
+            <h3 className="text-sm font-semibold">Tech Stack</h3>
+    }
+            <div className="mt-4 grid grid-cols-2 gap-3 text-sm">
+
+              {["Jira", "Confluence", "Azure", "Power BI", "Python", "Notion", "GitHub", "CI/CD"].map((t, i) => (
+    .vertical-stack {
+                <div key={i} className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white/60 px-3 py-2">
+      display: grid;
+                  <span className="h-2 w-2 rounded-full bg-indigo-500"/> {t}
+      gap: 14px;
+                </div>
+    }
+              ))}
+
+            </div>
+    .timeline {
+          </Card>
+      display: grid;
+        </div>
+      gap: 16px;
+      </Section>
+      border-left: 1px solid rgba(255,255,255,0.08);
+
+      padding-left: 20px;
+      <Divider />
+    }
+
+
+      {/* Testimonials */}
+    .timeline .entry {
+      <Section id="testimonials" title="Praise & Endorsements" subtitle="Signals of trust from leaders and collaborators.">
+      position: relative;
+        <div className="grid md:grid-cols-3 gap-6">
+      padding-left: 6px;
+          {["Karthik’s Agile leadership transformed our delivery cadence.", "Calm under pressure; turns chaos into simple, trackable plans.", "Executive‑ready updates; stakeholders trust his data and his judgment."].map((q, i) => (
+    }
+            <Card key={i}>
+
+              <p className="text-sm leading-relaxed text-slate-700">“{q}”</p>
+    .timeline .entry::before {
+              <div className="mt-4 text-xs text-slate-500">— Reference available on request</div>
+      content: '';
+            </Card>
+      position: absolute;
+          ))}
+      left: -26px;
+        </div>
+      top: 6px;
+      </Section>
+      width: 10px;
+
+      height: 10px;
+      <Divider />
+      border-radius: 50%;
+
+      background: var(--accent);
+      {/* Contact / CTA */}
+      box-shadow: 0 0 0 4px rgba(247,212,101,0.08);
+      <Section id="contact" title="Let’s build something reliable" subtitle="Toronto / Remote • Open to Senior Scrum Master, Agile PM, or Delivery Lead roles">
+    }
+        <div className="grid md:grid-cols-3 gap-6 items-center">
+
+          <Card>
+    .timeline h4 {
+            <div className="text-sm">
+      margin: 0 0 6px;
+              <div><span className="font-semibold">Email:</span> <a className="text-indigo-700" href="mailto:karthikoc13@gmail.com">karthikoc13@gmail.com</a></div>
+      font-size: 1rem;
+              <div className="mt-1"><span className="font-semibold">Phone:</span> <a className="text-indigo-700" href="tel:+19057838689">+1 (905) 783‑8689</a></div>
+    }
+              <div className="mt-1"><span className="font-semibold">LinkedIn:</span> <a className="text-indigo-700" href="#">Connect</a></div>
+
+            </div>
+    .timeline span {
+          </Card>
+      font-size: 0.8rem;
+          <Card>
+      color: var(--text-muted);
+            <h3 className="text-base font-semibold">Résumé Snapshot</h3>
+    }
+            <p className="mt-2 text-sm text-slate-600">Download a one‑page executive résumé tailored for Senior Scrum Master roles.</p>
+
+            <a href="#resume" className="mt-4 inline-flex rounded-xl bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-indigo-500">Download PDF</a>
+    .grid-3 {
+          </Card>
+      display: grid;
+          <Card>
+      gap: 22px;
+            <h3 className="text-base font-semibold">Newsletter</h3>
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            <p className="mt-2 text-sm text-slate-600">Monthly note on Agile metrics, facilitation tips, and case studies.</p>
+    }
+            <button className="mt-4 inline-flex rounded-xl border border-indigo-200 bg-white px-4 py-2 text-sm font-semibold text-indigo-700 shadow hover:shadow-md">Subscribe</button>
+
+          </Card>
+    .grid-4 {
+        </div>
+      display: grid;
+      </Section>
+      gap: 22px;
+
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      {/* Footer */}
+    }
+      <footer className="relative overflow-hidden">
+
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"/>
+    .icon-box {
+        <div className="mx-auto max-w-6xl px-6 py-10">
+      display: flex;
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+      align-items: flex-start;
+            <div>© {new Date().getFullYear()} Karthik Marupaka. All rights reserved.</div>
+      gap: 14px;
+            <div className="flex items-center gap-4">
+    }
+              <a href="#about" className="hover:text-slate-700">About</a>
+
+              <a href="#projects" className="hover:text-slate-700">Projects</a>
+    .icon {
+              <a href="#contact" className="hover:text-slate-700">Contact</a>
+      width: 40px;
+            </div>
+      height: 40px;
+          </div>
+      border-radius: 12px;
+        </div>
+      background: rgba(255,255,255,0.06);
+      </footer>
+      display: grid;
+    </div>
+      place-items: center;
+  );
+      flex-shrink: 0;
+}
+      font-size: 1.2rem;
+    }
+
+    .list {
+      display: grid;
+      gap: 12px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .list li {
+      list-style: none;
+      border-radius: 12px;
+      padding: 14px 16px;
+      border: 1px solid rgba(255,255,255,0.04);
+      background: rgba(255,255,255,0.02);
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+      margin: 0;
+      border: none;
+    }
+
+    .cta-section {
+      text-align: center;
+      padding-bottom: 120px;
+    }
+
+    .cta-section .section-lead {
+      margin: 0 auto 36px;
+    }
+
+    footer {
+      padding: 40px 24px 60px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      background: rgba(8,8,9,0.86);
+    }
+
+    footer .footer-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 18px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    footer nav {
+      display: flex;
+      gap: 18px;
+    }
+
+    @media (max-width: 820px) {
+      nav ul {
+        display: none;
+      }
+      .cta-group {
+        display: none;
+      }
+      header {
+        padding: 12px 0;
+      }
+      .nav-container {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .section {
+        padding: 60px 20px;
+      }
+      .hero-card {
+        padding: 30px;
+      }
+    }
+  </style>
 </head>
 <body>
-
-<header>
-    <h1>Manisha Swargam - Food Regulatory Affairs Specialist</h1>
-</header>
-
-<!-- Profile Section -->
-<section class="profile">
-    <div class="container">
-        <img src="Manisha_Swargam.jpeg" alt="Manisha Swargam">
-        <h2>Manisha Swargam</h2>
-        <p>Regulatory Compliance & Strategic Consulting Professional</p>
-        <div class="contact-info">
-            📧 Email: <a href="mailto:manisha.jan10@gmail.com">manisha.jan10@gmail.com</a> <br>
-            📞 Phone: <a href="tel:+14373138689">+1 (437)-313-8689</a> <br>
-            🔗 <a href="https://www.linkedin.com/in/manisha-swargam-ab206713a/" target="_blank">LinkedIn Profile</a>
-        </div>
-        <div class="resume-download">
-            <a href="Manisha_Swargam_Resume.pdf" download>Download My Resume</a>
-        </div>
+  <header>
+    <div class="nav-container">
+      <div class="logo">MANISHA SWARGAM</div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="cta-group">
+        <a class="pill-button" href="#">Download CV</a>
+        <a class="pill-button primary" href="#contact">Let's Talk</a>
+      </div>
     </div>
-</section>
+  </header>
 
-<!-- Skills Section -->
-<section id="skills">
-    <div class="container">
-        <h2>Skills & Expertise</h2>
-        <div class="skills-container">
-            <div class="skill-item">
-                <h3>Regulatory Compliance</h3>
-                <p>100% approval rate for CFIA product compliance.</p>
-            </div>
-            <div class="skill-item">
-                <h3>Labeling & Claims Review</h3>
-                <p>Validated 100+ SKUs for ingredient & allergen compliance.</p>
-            </div>
-            <div class="skill-item">
-                <h3>Pre-Market Approvals</h3>
-                <p>30% faster approvals for 50+ food and supplement products.</p>
-            </div>
-            <div class="skill-item">
-                <h3>HACCP & Quality Audits</h3>
-                <p>Reduced non-conformance issues by 35%.</p>
-            </div>
+  <main>
+    <section class="section hero" id="home">
+      <div>
+        <div class="subtitle">Senior Data Analyst • Product Analytics • Hyderabad, India</div>
+        <h1 class="hero-heading">Manisha Swargam</h1>
+        <p class="subtitle" style="max-width: 520px;">
+          Analytical storyteller blending data science, product experimentation, and strategic insights to shape human-centered digital experiences.
+        </p>
+        <div class="badge-row">
+          <span class="badge">Product Analytics</span>
+          <span class="badge">Experimentation</span>
+          <span class="badge">SQL &amp; Python</span>
+          <span class="badge">Stakeholder Storytelling</span>
         </div>
-    </div>
-</section>
+      </div>
+      <div class="hero-card">
+        <div class="small-title">Currently</div>
+        <h3>Lead Analyst @ Visionary Labs</h3>
+        <p class="subtitle">
+          Partnering with design, growth, and engineering to launch data-driven product bets across B2C platforms.
+        </p>
+        <img src="https://images.unsplash.com/photo-1520880867055-1e30d1cb001c?auto=format&fit=crop&w=900&q=80" alt="Desk setup" />
+      </div>
+    </section>
 
-<!-- Certifications -->
-<section id="certifications">
-    <div class="container">
-        <h2>Certifications</h2>
-        <div class="certifications-container">
-            <div class="certification-item">
-                <img src="HACCP.png" alt="HACCP Certification">
-                <p>HACCP Managers Certificate Course</p>
-            </div>
-            <div class="certification-item">
-                <img src="nutrition_cert.jpg" alt="Nutrition Labeling Certification">
-                <p>Nutrition Labelling Certificate</p>
-            </div>
+    <hr class="divider" />
+
+    <section class="section" id="about">
+      <h2 class="section-heading">About</h2>
+      <p class="section-lead">
+        I align data strategy with business outcomes by translating complex signals into narratives leaders can act on. From funnel diagnostics to experimentation frameworks, I architect systems that help teams learn faster and scale what works.
+      </p>
+      <div class="about-grid">
+        <div class="card highlight">
+          <div class="card-title">What I Do</div>
+          <p>Build end-to-end analytics foundations, define north star metrics, and design experimentation roadmaps for consumer products.</p>
         </div>
+        <div class="card">
+          <div class="card-title">How I Work</div>
+          <p>Bring cross-functional partners into the insight loop, combining qualitative and quantitative research to ground every decision.</p>
+        </div>
+        <div class="card">
+          <div class="card-title">Impact</div>
+          <p>Scaled experimentation velocity by 3x, leading to 18% LTV uplift across mobile journeys while reducing churn in key segments.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <section class="section" id="expertise">
+      <h2 class="section-heading">Expertise</h2>
+      <p class="section-lead">Strategic focus areas that combine research, analytics engineering, and stakeholder enablement.</p>
+      <div class="grid-3">
+        <div class="card">
+          <div class="icon-box">
+            <div class="icon">📊</div>
+            <div>
+              <div class="card-title">Product Analytics</div>
+              <p>Activation funnels, cohort health, and north-star dashboards for informed product calls.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="icon-box">
+            <div class="icon">🧪</div>
+            <div>
+              <div class="card-title">Experimentation Design</div>
+              <p>Design of test/holdout structures, power analysis, and experimentation governance.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="icon-box">
+            <div class="icon">🤝</div>
+            <div>
+              <div class="card-title">Stakeholder Enablement</div>
+              <p>Influence through narrative-driven storytelling, workshops, and data literacy programs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <section class="section" id="services">
+      <h2 class="section-heading">Services</h2>
+      <p class="section-lead">Partnership models tailored for product, growth, and research teams.</p>
+      <div class="grid-4">
+        <div class="card">
+          <div class="card-title">Product Strategy Sprints</div>
+          <p>Discovery and metric design workshops translating customer signals into measurable bets.</p>
+        </div>
+        <div class="card">
+          <div class="card-title">Analytics Roadmapping</div>
+          <p>Blueprint and implementation support for scalable product analytics infrastructure.</p>
+        </div>
+        <div class="card">
+          <div class="card-title">Executive Dashboards</div>
+          <p>High-leverage reporting suites with automated narratives tailored to leadership cadence.</p>
+        </div>
+        <div class="card">
+          <div class="card-title">Experimentation Coaching</div>
+          <p>Upskill teams on hypothesis framing, experimentation ethics, and interpreting outcomes.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <section class="section" id="certifications">
+      <h2 class="section-heading">Certifications</h2>
+      <p class="section-lead">Credible foundations across analytics, experimentation, and product strategy.</p>
+      <div class="grid-3">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=600&q=80" alt="Certificate" style="border-radius: 12px; margin-bottom: 14px; border: 1px solid rgba(255,255,255,0.08);">
+          <div class="card-title">Certified Analytics Professional</div>
+          <p>INFORMS | 2022</p>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=600&q=80" alt="Headphones" style="border-radius: 12px; margin-bottom: 14px; border: 1px solid rgba(255,255,255,0.08);">
+          <div class="card-title">Experimentation Strategist</div>
+          <p>Reforge | 2023</p>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=80" alt="Laptop" style="border-radius: 12px; margin-bottom: 14px; border: 1px solid rgba(255,255,255,0.08);">
+          <div class="card-title">Product Analytics Leader</div>
+          <p>Google Analytics Academy | 2021</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <section class="section" id="publications">
+      <h2 class="section-heading">Publications &amp; Research</h2>
+      <p class="section-lead">Selected talks, articles, and research explorations.</p>
+      <div class="vertical-stack">
+        <div class="card">
+          <div class="card-title">Designing Experiments Beyond Metrics</div>
+          <p>Panel speaker, Analytics Asia Summit, 2023</p>
+        </div>
+        <div class="card">
+          <div class="card-title">Humanizing Personalization with Ethical Data Practices</div>
+          <p>Article, Product Analytics Today, 2022</p>
+        </div>
+        <div class="card">
+          <div class="card-title">Building Insight Rituals for Product Teams</div>
+          <p>Workshop, Growth Labs Series, 2021</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <section class="section cta-section" id="contact">
+      <h2 class="section-heading">Let's Work Together</h2>
+      <p class="section-lead">
+        Available for full-time opportunities and strategic consulting partnerships.
+      </p>
+      <div class="badge-row" style="justify-content: center;">
+        <span class="badge">manisha.swargam@email.com</span>
+        <span class="badge">LinkedIn: /in/manishaswargam</span>
+        <span class="badge">Hyderabad • Remote</span>
+      </div>
+      <div style="margin-top: 40px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <a class="pill-button primary" href="mailto:manisha.swargam@email.com">Start a Conversation</a>
+        <a class="pill-button" href="#">View Availability</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© 2024 Manisha Swargam. Crafted with curiosity and empathy.</div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-</section>
-
-<!-- Publications -->
-<section id="publications">
-    <div class="container">
-        <h2>Publications & Research</h2>
-        <p>📖 Dissertation: Enhancement of Solubility and Bioavailability of Hydrochlorothiazide Using Solid Dispersion Technique.</p>
-        <p>📢 10+ Regulatory Webinars & Thought Leadership Articles.</p>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer>
-    <p>Connect with me on <a href="https://www.linkedin.com/in/manisha-swargam-ab206713a/" target="_blank">LinkedIn</a></p>
-</footer>
-
+  </footer>
 </body>
 </html>
